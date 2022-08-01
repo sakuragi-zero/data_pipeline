@@ -70,3 +70,24 @@ def correct_date(text):
     date_col =datetime.datetime.strptime(text, '%d-%b-%y').strftime('%Y-%m-%d')
 
     return date_col
+
+'''
+この関数はcrosstabから作成したデータフレームを指定して行の範囲を指定して集計する
+data : df
+a : int
+'''
+
+def get_count(data, a):
+  for i in range(a + 1):
+    s = i* 10
+    e = s + 10
+    s = str(s)
+    e = str(e)
+    # 範囲を決める
+    a = data.loc[s : e]
+    # 集計する
+    print('レンジ' + s + '〜' + e)
+    print(a)
+    print(a.sum(axis = 0))
+    print('++++++++++++++++++++++++++++++++++++')
+
