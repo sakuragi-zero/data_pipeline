@@ -9,7 +9,7 @@ from typing import List, Dict
 from typing import Optional
 from dataclasses import dataclass
 from typing_extensions import TypedDict
-from typing import TypedDict
+# from typing import TypedDict
 
 import datetime
 
@@ -72,7 +72,7 @@ def correct_date(text):
     return date_col
 
 '''
-この関数はcrosstabから作成したデータフレームを指定して行の範囲を指定して集計する
+この関数はcrosstabから作成したデータフレームから行の範囲を指定して集計する
 data : df
 a : int
 '''
