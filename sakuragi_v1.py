@@ -80,7 +80,7 @@ a : int
 def get_count(data, a):
   for i in range(a + 1):
     s = i* 10
-    e = s + 10
+    e = s + 9
     s = str(s)
     e = str(e)
     # 範囲を決める
