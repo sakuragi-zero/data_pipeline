@@ -34,7 +34,7 @@ def proces_val(data):
     print(data.shape)
 
 # 形態素解析
-def mecab_text(text : str, stops : str):
+def mecab_text(text : str):
     '''
     - text : データフレームのテキストが入る
     - stops : ストップワードの文字列を指定する
