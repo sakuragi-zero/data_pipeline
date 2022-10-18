@@ -10,9 +10,4 @@ setup(
     description = 'このパッケージはデータの分析を行う上で必要なデータ加工やモデルの作成を簡単に、再帰的に行えるようにする',
     # install_requires = ['setuptools'],
     packages = ["data_pipeline.sakuragi_v2"],
-    entry_points = {
-        'console_scripts': [
-            'data_reshape = sakuragi-zero.data_pipeline.sakuragi_v2:data_reshape',
-        ]
-    }
 )
