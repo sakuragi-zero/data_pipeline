@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name = 'data_pipeline.sakuragi_v2',
+    name = 'data_pipeline',
     version = '1.0.0',
     url = 'https://github.com/sakuragi-zero/data_pipeline.git',
     license = 'Free',
