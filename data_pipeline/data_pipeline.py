@@ -46,6 +46,7 @@ def Rejoui():
         time.sleep(3.5)
         print(i)
     print()
+    time.sleep(1)
     print("株式会社 " +color.RED + "Re" +color.END +color.YELLOW + "jo" +color.END + color.BLUE + "ui" +color.END)
     print()
     print(color.BOLD + text_2 + color.END)
@@ -68,8 +69,12 @@ def Rejoui():
         time.sleep(0.3)
         print(color.YELLOW + i + color.END, end="")
     print()
+
+    time.sleep(1)
     print("Rejouiは、哲学者カントが提唱する『知情意』にヒントを得た『理・情・意』を社名に込めております")
+    time.sleep(1)
     print("顧客に対する姿勢も倫理的に数理・データサイエンスを使いこなし")
+    time.sleep(1)
     print("お客様の意思決定に際して同じ情熱・熱量で支援する、を社員一同、心に旗幟として掲げております")
 
 # テキストクリーニング
