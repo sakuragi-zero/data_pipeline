@@ -35,12 +35,12 @@ def Rejoui():
 
     text = ["しなやかさとは、", "繊細なようで", "柔らかいからこそ、", "おれない強さを意味します。", 
             "ビジネスでも人生でも", "壁にぶつかったり", "何かを諦めなければならない局面において",
-            "しなやかさがあれば新しい選択肢を生み出せます", "当たり前にとらわれない",
-            "しなやかな組織づくりをデータの力で実現します"]
+            "しなやかさがあれば新しい選択肢を生み出せます。", "当たり前にとらわれない",
+            "しなやかな組織づくりをデータの力で実現します。"]
     text_2 = "社名に込めた想い"
     text_3 = "理：理性・論理・理想そして教理の『理』常に論理的に物事に接します。"
     text_4 = "情：感情と情熱の『情』人の気持ちを思いやり何事にも情熱を持って臨みます。"
-    text_5 = "意：意思の『意』積極的な心を持ち続け強くはっきりした意思を示します"
+    text_5 = "意：意思の『意』積極的な心を持ち続け強くはっきりした意思を示します。"
 
     for i in text:
         time.sleep(3.5)
@@ -49,6 +49,7 @@ def Rejoui():
     time.sleep(1)
     print("株式会社 " +color.RED + "Re" +color.END +color.YELLOW + "jo" +color.END + color.BLUE + "ui" +color.END)
     print()
+    time.sleep(3)
     print(color.BOLD + text_2 + color.END)
     print()
     time.sleep(2)
@@ -56,13 +57,13 @@ def Rejoui():
     for i in text_3:
         time.sleep(0.3)
         print(color.RED + i + color.END, end="")
-    print("")
+    print()
     time.sleep(0.5)
 
     for i in text_4:
         time.sleep(0.3)
         print(color.BLUE + i + color.END, end="")
-    print("")
+    print()
     time.sleep(0.5)
 
     for i in text_5:
