@@ -22,9 +22,9 @@ def clean_text(text : str) -> str:
     - text : データフレームのテキストが入る
     '''
     replaced_text = text
-    replaced_text = re.sub(r'[（）()]', ' ', replaced_text)     # （）の除去
-    replaced_text = re.sub(r'[ + ± ＋ ]', ' ', replaced_text)     #  + ±の除去
-    replaced_text = re.sub(r'　', ' ', replaced_text)  # 全角空白の除去
+    replaced_text = re.sub(r'[（）()]', '', replaced_text)     # （）の除去
+    replaced_text = re.sub(r'[ + ± ＋ ]', '', replaced_text)     #  + ±の除去
+    replaced_text = re.sub(r'　', '', replaced_text)  # 全角空白の除去
     #replaced_text = replaced_text + '削除したよ'
     return replaced_text
 
