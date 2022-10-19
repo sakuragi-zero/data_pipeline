@@ -1,13 +1,7 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name = "data_pipeline",
-    version = '1.0.0',
-    url = 'https://github.com/sakuragi-zero/data_pipeline.git',
-    license = 'Free',
-    author = 'iwata & sauragi',
-    # author_email = '---',
-    description = 'このパッケージはデータの分析を行う上で必要なデータ加工やモデルの作成を簡単に、再帰的に行えるようにする',
-    # install_requires = ['setuptools'],
-    packages = ["data_pipeline"],
+    name='sakuragi_v2',
+    version='0.1',
+    packages=find_packages()
 )
