@@ -72,11 +72,11 @@ def Rejoui():
     print()
 
     time.sleep(2)
-    print("Rejouiは、哲学者カントが提唱する『知情意』にヒントを得た『理・情・意』を社名に込めております")
+    print("Rejouiは、哲学者カントが提唱する『知情意』にヒントを得た『理・情・意』を社名に込めております。")
     time.sleep(2)
     print("顧客に対する姿勢も倫理的に数理・データサイエンスを使いこなし")
     time.sleep(2)
-    print("お客様の意思決定に際して同じ情熱・熱量で支援する、を社員一同、心に旗幟として掲げております")
+    print("お客様の意思決定に際して同じ情熱・熱量で支援する、を社員一同、心に旗幟として掲げております。")
 
 # テキストクリーニング
 def clean_text(text : str) -> str:
@@ -158,3 +158,41 @@ def data_reshape(data : pd.DataFrame) -> pd.DataFrame :
     print(type(results))
     
     return results
+
+# データフレームを名前×wordの形にする
+
+def word_closs_count(data: pd.DataFrame, words: str, name:str, n_use=3) -> pd.DataFrame:
+    """
+    -data : 変換したいデータフレーム
+    -words : テキスト列を指定
+    -name : 人名の列
+    -n_use : 何文字以上を採用するか(n-1が適応される)
+    """
+    # カラムの列名をDrに変更(Dr words)の形
+    df = data[[name, words]].rename(columns={name:'Dr'})
+    # 文字数をカウントする関数を定義
+    from collections import Counter
+    def count_words(col):
+        lis = []
+        for li in df[col]:
+            lis.extend([i for i in li.split(',') if len(i)>0])            
+        return Counter(lis).most_common()
+    
+    # count_words関数を使ってdr_wordsを作成
+    all_words = [x[0] for x in count_words(words) if x[1]>(n_use-1)]
+    all_freqs = [x[1] for x in count_words(words) if x[1]>(n_use-1)]
+
+    all_freqs = [x[1] for x in count_words(words) if x[1]>(n_use-1)]
+    display(pd.DataFrame(round(pd.Series(all_freqs).describe(), 2) ))
+
+    for w in all_words:
+        df[w] = 0
+        
+    for i, words in enumerate(df[words]):
+        for word in words.split(','):
+            if word in all_words:
+                df.at[i, word] =+ 1
+
+    dr_words = df.groupby('Dr').sum()
+
+    return dr_words
